@@ -1,0 +1,22 @@
+[core]
+    excludesfile = ~/.gitignore_global
+    editor = vim
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = false
+
+[push]
+    default = simple
+
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    ci = commit
+
+# ローカルの個人設定を読み込む
+[include]
+    path = ~/.gitconfig.local
