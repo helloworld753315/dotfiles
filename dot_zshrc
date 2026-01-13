@@ -1,0 +1,32 @@
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
+# Homebrew補完
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  autoload -Uz compinit && compinit
+fi
+
+# Git補完とプロンプト
+if [ -f ~/.zsh/git-prompt.sh ]; then
+  source ~/.zsh/git-prompt.sh
+  fpath=(~/.zsh $fpath)
+  zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+  
+  GIT_PS1_SHOWDIRTYSTATE=true
+  GIT_PS1_SHOWUNTRACKEDFILES=true
+  GIT_PS1_SHOWSTASHSTATE=true
+  GIT_PS1_SHOWUPSTREAM=auto
+  
+  setopt PROMPT_SUBST
+  PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
+\$ '
+fi
+
+# ~/.local/bin/env の読み込み
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
+
+# ローカル固有設定
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
