@@ -368,13 +368,15 @@ darwin-rebuild switch --switch-generation 3
 
 ## タイムライン
 
-### Phase 1（今日）
-- [x] Nixインストール
-- [ ] nix-darwinセットアップ
-- [ ] Homebrewパッケージを宣言的に管理
-- [ ] 動作確認
+### Phase 1（完了）
+- [x] Nixインストール (Determinate Systems)
+- [x] nix-darwinセットアップ
+- [x] Homebrewパッケージを宣言的に管理 (22 formulae, 4 casks)
+- [x] 動作確認
+- [x] 設定をGitで管理
 
-**所要時間**: 1-2時間
+**完了日**: 2026-02-23
+**所要時間**: 約2時間
 
 ### Phase 2（数週間後）
 - [ ] 慣れてからシンプルなCLIツールを移行
@@ -433,5 +435,5 @@ darwin-rebuild switch --switch-generation 3
 
 ---
 
-**最終更新**: 2026-02-21
-**ステータス**: Phase 1 準備中
+**最終更新**: 2026-02-23
+**ステータス**: Phase 1 完了 ✅

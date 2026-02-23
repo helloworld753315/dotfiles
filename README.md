@@ -19,6 +19,9 @@ chezmoiで管理する個人的なdotfilesリポジトリです。
   - `.claude/agents/docs-writer.md`: ドキュメント作成エージェント
   - `.claude/agents/test-generator.md`: テスト生成エージェント
 
+- **Nix/nix-darwin設定**
+  - `.config/nix-darwin/flake.nix`: Homebrewパッケージの宣言的管理設定
+
 ## セットアップ
 
 ### 初回インストール
@@ -89,6 +92,33 @@ git add .
 git commit -m "Update dotfiles"
 git push
 ```
+
+## Nix/nix-darwin によるパッケージ管理
+
+このdotfilesでは、Homebrewパッケージをnix-darwinで宣言的に管理しています。
+
+### 仕組み
+
+- **パッケージ**: Homebrewを使用（既存環境そのまま）
+- **管理方法**: `.config/nix-darwin/flake.nix`で宣言的に管理
+- **メリット**: 設定ファイルで環境を再現可能
+
+### パッケージの追加・削除
+
+```bash
+# 1. flake.nixを編集
+vim ~/.local/share/chezmoi/dot_config/nix-darwin/flake.nix
+
+# 2. chezmoiで適用
+chezmoi apply
+
+# 3. nix-darwinで反映
+darwin-rebuild switch --flake ~/.config/nix-darwin#helloworldnoMBP
+```
+
+### 詳細
+
+移行計画や詳細は `docs/nix-migration-plan.md` を参照してください。
 
 ## Claude Codeカスタムエージェント
 
