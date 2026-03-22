@@ -1,0 +1,55 @@
+# 依存関係
+node_modules/
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+vendor/
+
+# ビルド成果物
+dist/
+build/
+out/
+target/
+*.o
+*.so
+*.dylib
+
+# Git
+.git/
+
+# ログ・一時ファイル
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# エディタ
+.vscode/
+.idea/
+*.iml
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# パッケージマネージャーのロックファイル（大きいため）
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+Gemfile.lock
+poetry.lock
+
+# テストカバレッジ
+coverage/
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Nix
+result
+result-*
+.direnv/
