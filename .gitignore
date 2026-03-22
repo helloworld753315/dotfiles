@@ -1,0 +1,22 @@
+# Nix/chezmoi 生成ファイル
+# flake.lock は darwin-rebuild が自動生成するため管理不要
+
+# エディタ
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# 一時ファイル
+*.tmp
+*.bak
+
+# 秘密情報（もし将来追加する場合）
+# *secret*
+# *token*
+# *.key
+# .env*
