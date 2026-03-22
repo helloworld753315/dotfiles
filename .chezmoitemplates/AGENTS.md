@@ -1,4 +1,4 @@
-# Global Development Guidelines for Claude
+# Global Development Guidelines
 
 ## Communication Principles
 
@@ -43,6 +43,3 @@
 - What the code does (the code itself should be clear)
 - Repeating variable/function names in natural language
 - Obvious operations that are self-explanatory
-
-**Examples:**
-```python
